@@ -7,7 +7,12 @@ Pod::Spec.new do |s|
     s.homepage = "https://github.com/alibaba/handyjson"
     s.name = "HandyJSON"
 
-    s.source_files = 'Source/**/*.{swift,h,m,xcprivacy}'
+    s.source_files = 'Source/**/*.{swift,h,m}'
+
+    s.subspec 'VXResource' do |ss|
+       ss.resources = 'Source/PrivacyInfo.xcprivacy'
+    end
+
     s.source = { :git => 'https://github.com/alibaba/HandyJSON.git', :tag => s.version.to_s }
 
     s.summary = 'A Json Serialization & Deserialization Library for Swift'
